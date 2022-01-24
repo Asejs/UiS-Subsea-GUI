@@ -1,16 +1,16 @@
 const rovC = {
-    props: ['dybde'],
+    props: ['tid', 'teller', 'strom1', 'strom2', 'spenn', 'dybde', 'temp_vann'],
     name: 'rov',
     template: `
 
     <div class="row mb-3">
 
     <div class="col p-3 bg-dark text-white"><h2>ROV</h2>
-        <p class="small">Tid: <span class="badge badge-secondary" id="tid1"> ------- </span></p>
-        <p class="small">Teller: <span class="badge badge-secondary" id="tel1"> ------- </span></p>
-        <p class="small">Strøm 1: <span  class="badge badge-secondary" id="strom2"> ------- </span></p>
-        <p class="small">Strøm 2: <span class="badge badge-secondary" id="strom1"> ------ </span></p>
-        <p class="small">Spenning: <span class="badge badge-secondary" id="spenn1"> ------- </span></p>
+        <p class="small">Tid: <span class="badge badge-secondary" id="tid1">{{ tid }}</span></p>
+        <p class="small">Teller: <span class="badge badge-secondary" id="tel1">{{ teller }}</span></p>
+        <p class="small">Strøm 1: <span  class="badge badge-secondary" id="strom2">{{ strom1 }}</span></p>
+        <p class="small">Strøm 2: <span class="badge badge-secondary" id="strom1">{{ strom2 }}</span></p>
+        <p class="small">Spenning: <span class="badge badge-secondary" id="spenn1">{{ spenn }}</span></p>
         <p class="small">Orientering: <span class="badge badge-secondary" id="ori"> ------- </span></p>
         <p class="small">Skalering: <span class="badge badge-secondary" id="skall"> ------- </span></p>
     </div>
@@ -55,7 +55,7 @@ const rovC = {
                 </div>
     
             <p class="small">Dybde: <span class="badge badge-secondary" id="dybd">{{ dybde }}</span></p>
-            <p class="small">Temp vann: <span class="badge badge-secondary" id="vanntemp"> ------- </span></p>
+            <p class="small">Temp vann: <span class="badge badge-secondary" id="vanntemp">{{ temp_vann }}</span></p>
     
         <!--<p>Akselerasjon: <span class="badge badge-secondary" id="aks"> ------- </span></p> -->
     </div>  

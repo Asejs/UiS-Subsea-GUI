@@ -19,6 +19,11 @@ var brytere = document.getElementsByClassName("btn")
 bdg = 20
 
 
+var test_data = {"test_data": {
+    "teller":  0,
+    "tid":  0,
+}}
+
 var status_data = {"status_data": {
     "teller":  0,
     "tid":  0,
@@ -160,7 +165,7 @@ var skaleringPressed = false
 
 // ----------------------------------------------- //
 // Oppdatering av data mellom Server og Frontside  //
- // ------------------------------------------------//
+// ------------------------------------------------//
 
 
 
@@ -462,9 +467,9 @@ async function update_status(){
 
 
 
-   // ----------------------------------------------- //
-  // Grafikk til motorer, se også styling.css        //
- // ----------------------------------------------- //
+// ----------------------------------------------- //
+// Grafikk til motorer, se også styling.css        //
+// ----------------------------------------------- //
 
 
 // Omregning prosent til grader.
@@ -521,10 +526,9 @@ else {
 
 
 
-
-   // ----------------------------------------------- //
-  // XBOX Kontrollere                                //
- // ----------------------------------------------- //
+// ----------------------------------------------- //
+// XBOX Kontrollere                                //
+// ----------------------------------------------- //
 
 // Konverter styringsinput fra et kvadratisk omraade til et sirkulaert omraade
 function convert(venstre_x, venstre_y, hoyre_x, hoyre_y) {
@@ -566,9 +570,9 @@ window.addEventListener('gamepaddisconnected', event => {
 
 
 
-   // ----------------------------------------------- //
-  // Kontroll knapper:                               //
- // ----------------------------------------------- //
+// ----------------------------------------------- //
+// Kontroll knapper:                               //
+// ----------------------------------------------- //
 
 //  Start bryter
 /*$("#init").change(function(){
@@ -814,10 +818,9 @@ else {
 }
 })
 
-
-   // ----------------------------------------------- //
-  // Knapper som kaller bildebehandlingsfunksjoner:  //
- // ----------------------------------------------- //
+// ----------------------------------------------- //
+// Knapper som kaller bildebehandlingsfunksjoner:  //
+// ----------------------------------------------- //
 
 brytere.namedItem("ta_bilde_frontkamera").onclick = function(){
         $.get("/ta_bilde_frontkamera", function(data, status) {
