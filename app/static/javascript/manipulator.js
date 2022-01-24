@@ -76,6 +76,7 @@ const manipulatorC = {
 
         </div>
     </div>
+    </div>
     `,
     data: function() {
         return {

@@ -158,13 +158,17 @@ var skaleringPressed = false
 //const gamepads = navigator.getGamepads()
 
 
-   // ----------------------------------------------- //
-  // Oppdatering av data mellom Server og Frontside  //
+// ----------------------------------------------- //
+// Oppdatering av data mellom Server og Frontside  //
  // ------------------------------------------------//
+
+
 
 async function update_status(){
     let data
     let res
+
+
     // Startopp prosedyre
     if (!initialisert) {
         res = await fetch("/init_kamera");
@@ -172,6 +176,7 @@ async function update_status(){
         status_data = await res.json();
         initialisert = await true;
     }
+    
 
     // Kommunikasjon med ROV og mROV.
     if (start == 1) {
@@ -245,6 +250,23 @@ async function update_status(){
                 //status_data = await data.responseJSON;
             }
         }
+
+        /* ---------------------------------------- */
+        // MÅ BRUKE:
+        /*
+        methods: {
+            async get_activities() {
+                // get activites
+                let response = await fetch(baseURL + "activities_get");
+                if (response.status != 200){
+                    console.log("Failed to get activities")
+                    return ""
+                }
+                let result = await response.json();
+                this.activities = result;
+            },
+        */
+        /* ---------------------------------------- */
 
         // Oppdatering av variabler til styring/kontroll av programm
         manipulator = status_data["status_data"]["manip_paa"];
@@ -549,7 +571,7 @@ window.addEventListener('gamepaddisconnected', event => {
  // ----------------------------------------------- //
 
 //  Start bryter
-$("#init").change(function(){
+/*$("#init").change(function(){
 if ($(this).is(':checked')){
 timer_1 = setTimeout(update_status, set_timeout_time);
 start = 1
@@ -561,7 +583,7 @@ else {
     is_close = true;
 }
 
-})
+})*/
 
 //  Stop bryter
 $("#stop").change(function(){
@@ -576,41 +598,6 @@ is_close = false;
 }
 })
 
-/*//  mROV bryter
-$("#mode1").change(function(){
-if ($(this).is(':checked')){
-     mROV = 1
-     $.post("/post_control_data.json", {
-         "mROV": 1,
-         "manip_paa": 0
-        },
-        function(data, status) {
-        status_data = data;
-        });
-         $.post("/post_control_data_mROV.json", {
-         "mROV": 1
-        },
-        function(data, status) {
-        status_data_mROV = data;
-        });
-        $("#rov_btn_1")[0].checked = false;
-}
-else {
-     mROV = 0
-         $.post("/post_control_data.json", {
-         "mROV": 0
-        },
-        function(data, status) {
-        status_data = data;
-        })
-                 $.post("/post_control_data_mROV.json", {
-         "mROV": 0
-        },
-        function(data, status) {
-        status_data_mROV = data;
-        })
-}
-})*/
 
 //  Manuell bryter
 $("#manuell").change(function(){
@@ -827,50 +814,6 @@ else {
 }
 })
 
-// Lys microROV
-/*$("#mrov_btn_1").change(function(){
-if ($(this).is(':checked')){
-        $.post("/post_control_data_mROV.json", {
-         "lys": 1
-        },
-        function(data, status) {
-        status_data_mROV = data;
-        })
-}
-else {
-     $.post("/post_control_data_mROV.json", {
-         "lys": 0
-        },
-        function(data, status) {
-        status_data_mROV = data;
-        })
-}
-})*/
-
-// Strømbryter microROV
-/*$("#mrov_btn_2").change(function(){
-if ($(this).is(':checked')){
-        $.post("/post_control_data_mROV.json", {
-         "bryter_ext": 1
-        },
-        function(data, status) {
-        status_data_mROV = data;
-        })
-}
-else {
-     $.post("/post_control_data_mROV.json", {
-         "bryter_ext": 0
-        },
-        function(data, status) {
-        status_data_mROV = data;
-
-        })
-}
-})*/
-
-
-
-
 
    // ----------------------------------------------- //
   // Knapper som kaller bildebehandlingsfunksjoner:  //
@@ -936,40 +879,3 @@ brytere.namedItem("analyser_koralrev").onclick = function(){
         myWindow.document.write(data);};
 });
 }
-
-///////// DEFINISJON AV XBOX KONTROLLERENS KNAPPER  IKKE I BRUK //////////////////////
-
-     /*  const gamepadState = {
-            id: gamepads[0].id,
-            axes: [
-                { Left_x: venstre_x.toFixed(2)},
-                { Left_y: venstre_y.toFixed(2)},
-                { Angle_left: vinkel_venstre.toFixed(2)},
-                { Right_x: hoyre_x.toFixed(2)},
-                { Right_y: hoyre_y.toFixed(2)},
-                { Angle_right: vinkel_hoyre.toFixed(2)},
-            ],
-            buttons: [
-                { A: gamepads[0].buttons[0].pressed },
-                { B: gamepads[0].buttons[1].pressed },
-                { X: gamepads[0].buttons[2].pressed },
-                { Y: gamepads[0].buttons[3].pressed },
-                { LB: gamepads[0].buttons[4].pressed },
-                { RB: gamepads[0].buttons[5].pressed },
-                { LT: gamepads[0].buttons[6].pressed },
-                { RT: gamepads[0].buttons[7].pressed },
-                { Back: gamepads[0].buttons[8].pressed },
-                { Start: gamepads[0].buttons[9].pressed },
-                { LST: gamepads[0].buttons[10].pressed },
-                { RST: gamepads[0].buttons[11].pressed },
-                { PAD_UP: gamepads[0].buttons[12].pressed },
-                { PAD_DOWN: gamepads[0].buttons[13].pressed },
-                { PAD_LEFT: gamepads[0].buttons[14].pressed },
-                { PAD_RIGHT: gamepads[0].buttons[15].pressed },
-            ],
-            skalering: [
-                {Skalering: skalering},
-            ]
-        }*/
-
-

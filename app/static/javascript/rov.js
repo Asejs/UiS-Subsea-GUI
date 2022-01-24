@@ -1,4 +1,5 @@
 const rovC = {
+    props: ['dybde'],
     name: 'rov',
     template: `
 
@@ -63,7 +64,6 @@ const rovC = {
     `,
     data: function() {
         return {
-            dybde: "10"
         };
     },
 }

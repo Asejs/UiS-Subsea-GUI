@@ -1,4 +1,5 @@
 const bildebehandlingC = {
+    props: ['bildebehandling'],
     name: 'bildebehandling',
     template: `
     <h2>Bildebehandling</h2>
