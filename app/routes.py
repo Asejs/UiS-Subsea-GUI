@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request
 from app import app
 import json, time, requests
 
@@ -10,6 +10,30 @@ def index():
 
 '''@app.route('/update_data')
 def update_data:'''
+
+
+
+@app.route('/test')
+def test():
+    if not "controller_data" in app.config:
+        app.config["controller_data"] = "a"
+    return json.dumps(app.config["controller_data"])
+
+@app.route('/view')
+def view():
+    return render_template("view.html")
+
+
+
+@app.route('/update_data', methods=["POST"])
+def update_data():
+    if request.method == 'POST':
+        # print("before")
+        # print(jsonstr(request.data))
+        # print(json.loads(request.data)[0])
+        app.config["controller_data"] = json.loads(request.data)
+        # print("after")
+    return "good"
 
 
 # -------------------------------------------------------------
