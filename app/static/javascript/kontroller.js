@@ -4,7 +4,7 @@ const kontrollerC = {
     <h2>Kontroller</h2>
     
     <div class="container">
-        <input type="radio" class="btn-check " name="state" id="init" autocomplete="off">
+        <input type="radio" class="btn-check" name="state" id="init" autocomplete="off">
         <label class="btn btn-outline-success btn-sm" for="init">På</label>
     
         <input type="radio" class="btn-check btn-sm" name="state" id="stop" autocomplete="off" checked>
