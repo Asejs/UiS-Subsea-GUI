@@ -6,7 +6,7 @@ const manipulatorC = {
     <!--<span class="badge badge-dark" id="man_pa">På</span>
     <span class="badge badge-dark" id="man_av">Av</span>-->
 
-    <div class="col container bg-dark text-white">
+    <div class="col container">
     
         <div class="row">
             <div class="col"> Motor 1:</div>

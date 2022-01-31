@@ -3,9 +3,9 @@ const rovC = {
     name: 'rov',
     template: `
 
-    <div class="row mb-3">
+    <div class="row">
 
-    <div class="col p-3 bg-dark text-white"><h2>ROV</h2>
+    <div class="col"><h2>ROV</h2>
         <p class="small">Tid: <span class="badge badge-secondary" id="tid1">{{ tid }}</span></p>
         <p class="small">Teller: <span class="badge badge-secondary" id="tel1">{{ teller }}</span></p>
         <p class="small">Strøm 1: <span  class="badge badge-secondary" id="strom2">{{ strom1 }}</span></p>
@@ -15,7 +15,7 @@ const rovC = {
         <p class="small">Skalering: <span class="badge badge-secondary" id="skall"> ------- </span></p>
     </div>
     
-    <div class="col p-3 bg-dark text-white">
+    <div class="col">
         <h3></h3>
             <div class="pb-3">
             <form>

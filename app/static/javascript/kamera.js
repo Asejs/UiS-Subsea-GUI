@@ -12,10 +12,6 @@ const kameraC = {
     </div>
 
     <div class="container">
-        <button name="ta_bilde_mROV" type="button" class="btn btn-outline-success btn-sm">Ta bilde mROV</button>
-    </div>
-
-    <div class="container">
         <button name="slett_siste_bilde" type="button" class="btn btn-outline-danger btn-sm">Slett det siste bildet</button>
     </div>
 
